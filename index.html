@@ -319,8 +319,8 @@ function generateTableRows(products) {
       </td>
       <td>
         <select>
+	  <option value="Unt" ${product.unit === 'Unt' ? 'selected' : ''}>Unt</option>
           <option value="Cart" ${product.unit === 'Cart' ? 'selected' : ''}>Cart</option>
-          <option value="Unt" ${product.unit === 'Unt' ? 'selected' : ''}>Unt</option>
           <option value="Kg" ${product.unit === 'Kg' ? 'selected' : ''}>Kg</option>
           <option value="L" ${product.unit === 'L' ? 'selected' : ''}>L</option>
 
