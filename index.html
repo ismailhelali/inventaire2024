@@ -1,270 +1,79 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>SOLIDERNET Product List</title>
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description" content="Inventaire 2024">
-	<meta name="keywords" content="SOLIDERNET , Temara, Produits alimentaires, emballage, patisseries, barquettes, boîtes à pizza, sauces, fromages, jus, arômes, bouillons, crèmes, farines, noix, huiles, sucres, thé et infusions, produits d'entretien, puré, sels, topping et sirop, vinaigres">
-<style>
-	.dropdown {
-  position: relative;
-  display: inline-block;
-}
+  <meta name="keywords"
+    content="SOLIDERNET , Temara, Produits alimentaires, emballage, patisseries, barquettes, boîtes à pizza, sauces, fromages, jus, arômes, bouillons, crèmes, farines, noix, huiles, sucres, thé et infusions, produits d'entretien, puré, sels, topping et sirop, vinaigres">
+  <link href="style.css" rel="stylesheet" />
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 250px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-div.fixed  {
-  position: fixed;
-  width: 50%;
-  height: 30px;
-  bottom: 10px;
-  border: 3px solid #00008B;
-} 
-
-#pdf-button {
-width: 100%;
-height: 100%;
-background-color: #00008B;
-color :#FFFFFF;
-	} 
-	
-	.selectdiv {
-  position: relative;
-  /*Don't really need this just for demo styling*/
-  
-  float: left;
-  min-width: 200px;
-  margin: 50px 33%;
-}
-
-/* IE11 hide native button (thanks Matt!) */
-select::-ms-expand {
-display: none;
-}
-
-.selectdiv:after {
-  content: '(:';
-  font: 17px "Consolas", monospace;
-  color: #333;
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-  right: 11px;
-  /*Adjust for position however you want*/
-  
-  top: 18px;
-  padding: 0 0 2px;
-  border-bottom: 1px solid #999;
-  /*left line */
-  
-  position: absolute;
-  pointer-events: none;
-}
-
-.selectdiv select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  /* Add some styling */
-  
-  display: block;
-  width: 100%;
-  max-width: 320px;
-  height: 50px;
-  float: right;
-  margin: 5px 0px;
-  padding: 0px 24px;
-  font-size: 16px;
-  line-height: 1.75;
-  color: #333;
-  background-color: #ffffff;
-  background-image: none;
-  border: 1px solid #cccccc;
-  -ms-word-break: normal;
-  word-break: normal;
-}
- .selectdiv input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  /* Add some styling */
-  
-  display: block;
-  width: 100%;
-  max-width: 320px;
-  height: 50px;
-  float: right;
-  margin: 5px 0px;
-  padding: 0px 24px;
-  font-size: 16px;
-  line-height: 1.75;
-  color: #333;
-  background-color: #ffffff;
-  background-image: none;
-  border: 1px solid #cccccc;
-  -ms-word-break: normal;
-  word-break: normal;
-}
-	
-.tableliste {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    width : 100%;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.inputquantity {
-  width: 60px;
-  height: 30px;	
-}	
-.tableliste thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
-}
-	.tableliste tbody tr {
-    border-bottom: 1px solid #dddddd;
-}
-
-.tableliste tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-
-.tableliste tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
-}
-	
-.tableliste th,
-.tableliste td {
-    padding: 12px 15px;
-}
-.tableliste tbody tr.active-row {
-    font-weight: bold;
-    color: #191970;
-}
-   p {
-  width :100%;
-  font-size: 16px;
-  line-height: 1.5;
-  text-align: justify;
-  padding: 16px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px #ccc;
-}
-
-.title {
-  width :100%;
-  font-size: 24px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 16px;
-  text-align: center;
-  color: #00008B;
-}
-
-.titleDIV:hover {
-      background-color : #FFFFF0;
-     
-}
-
-h1.title {
-    font-size: 32px;
-    margin-bottom: 32px;
-}
-
-.product-process {
-  
-  font-size: 16px;
-  line-height: 1.5;
-  text-align: justify;
-  padding: 16px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px #ccc;
-}
-	
-
-  </style>  
-<!-- include Bootstrap JavaScript -->
-<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <!-- include Bootstrap JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   <!-- include LIEN DYAL TMP -->
- 
-
   <script src="https://unpkg.com/jspdf-invoice-template@1.4.0/dist/index.js"></script>
-
- 
+  
 </head>
+
 <body>
-<div class="titleDIV">
-<br>
-<h1 class="title">INVENTAIRE 2024 - SOLIDERNET</h1>
-<h2 class="title">Liste des Produits SOLIDERNET</h1>
-<br>
-	</div>
-<div class="dropdown">
-  <span>Comment ça marche ?</span>
-  <div class="dropdown-content">
-<p class="product-process">Sélectionner les produits souhaités, entrez les quantités souhaitées, utilisez le champ de recherche pour trouver des produits spécifiques ou utiliser la liste déroulante pour filtrer les produits par catégorie. Il est également possible de générer un fichier PDF qui regroupe les produits sélectionnés et de l'envoyer par email ou WhatsApp pour obtenir un devis personnalisé.</p>
+  <div class="titleDIV">
+    <br>
+    <h1 class="title">INVENTAIRE 2024 - SOLIDERNET</h1>
+    <h2 class="title">Liste des Produits SOLIDERNET</h1>
+      <br>
   </div>
-</div>
-	
+  <div class="dropdown">
+    <span>Comment ça marche ?</span>
+    <div class="dropdown-content">
+      <p class="product-process">Sélectionner les produits souhaités, entrez les quantités souhaitées, utilisez le champ
+        de recherche pour trouver des produits spécifiques ou utiliser la liste déroulante pour filtrer les produits par
+        catégorie. Il est également possible de générer un fichier PDF qui regroupe les produits sélectionnés et de
+        l'envoyer par email ou WhatsApp pour obtenir un devis personnalisé.</p>
+    </div>
+  </div>
+
   <div class="container-fluid">
     <!-- search field -->
-      <div class="selectdiv">
-        <input type="search"  id="search-field" placeholder="Rechercher un produit">
-     
-   
-	        <label>
+    <div class="selectdiv">
+      <input type="search" id="search-field" placeholder="Rechercher un produit">
+
+
+      <label>
         <select class="form-control" id="category-select">
-<option value="">Nos catégories</option>      
-<option value="EPICES -  FECULENTS ET FRUITS">EPICES -  FECULENTS ET FRUITS</option>
-<option value="HYGIENE ET NETTOYAGE">HYGIENE ET NETTOYAGE</option>
-<option value="LES CONSERVES">LES CONSERVES</option>
-<option value="BAS CAISSE">BAS CAISSE</option>
-<option value="EMBALLAGE ALIMENTAIRE">EMBALLAGE ALIMENTAIRE</option>
-<option value="TOUS">TOUS</option>
-<option value="AUTRES PRODUITS">AUTRES PRODUITS</option>
-<option value="NON UTILISER">NON UTILISER</option>
-<option value="PRODUITS ALIMENTATION GENERALE">PRODUITS ALIMENTATION GENERALE</option>
-<option value="FARINE BLE RIZ- ET COUSCOUS">FARINE BLE RIZ- ET COUSCOUS</option>
-<option value="EMBALLAGE SUSHI">EMBALLAGE SUSHI</option>
-<option value="BARQUETTE ALUMINIUM">BARQUETTE ALUMINIUM</option>
-<option value="PRODUITS LAITIER ET CREMES">PRODUITS LAITIER ET CREMES</option>
-<option value="EMBALLAGE PATISSIERE">EMBALLAGE PATISSIERE</option>
-<option value="FROMAGERIE ET CHARCUTERIE">FROMAGERIE ET CHARCUTERIE</option>
-<option value="LES CHOCOLATS">LES CHOCOLATS</option>
-<option value="LES PATES ALIMENTAIRE">LES PATES ALIMENTAIRE</option>
-<option value="HUILE DE TABLE ET D'OLIVE">HUILE DE TABLE ET D'OLIVE</option>
+          <option value="">Nos catégories</option>
+          <option value="EPICES -  FECULENTS ET FRUITS">EPICES - FECULENTS ET FRUITS</option>
+          <option value="HYGIENE ET NETTOYAGE">HYGIENE ET NETTOYAGE</option>
+          <option value="LES CONSERVES">LES CONSERVES</option>
+          <option value="BAS CAISSE">BAS CAISSE</option>
+          <option value="EMBALLAGE ALIMENTAIRE">EMBALLAGE ALIMENTAIRE</option>
+          <option value="TOUS">TOUS</option>
+          <option value="AUTRES PRODUITS">AUTRES PRODUITS</option>
+          <option value="NON UTILISER">NON UTILISER</option>
+          <option value="PRODUITS ALIMENTATION GENERALE">PRODUITS ALIMENTATION GENERALE</option>
+          <option value="FARINE BLE RIZ- ET COUSCOUS">FARINE BLE RIZ- ET COUSCOUS</option>
+          <option value="EMBALLAGE SUSHI">EMBALLAGE SUSHI</option>
+          <option value="BARQUETTE ALUMINIUM">BARQUETTE ALUMINIUM</option>
+          <option value="PRODUITS LAITIER ET CREMES">PRODUITS LAITIER ET CREMES</option>
+          <option value="EMBALLAGE PATISSIERE">EMBALLAGE PATISSIERE</option>
+          <option value="FROMAGERIE ET CHARCUTERIE">FROMAGERIE ET CHARCUTERIE</option>
+          <option value="LES CHOCOLATS">LES CHOCOLATS</option>
+          <option value="LES PATES ALIMENTAIRE">LES PATES ALIMENTAIRE</option>
+          <option value="HUILE DE TABLE ET D'OLIVE">HUILE DE TABLE ET D'OLIVE</option>
 
           <!-- add options for categories here -->
         </select>
-	</label>
+      </label>
 
-      </div>
+    </div>
     <!-- PDF button -->
-	  <div class="fixed">
+    <div class="fixed">
 
-        <!-- ON CLICK GENERATE PDF-->
-        <button onclick="generatePdf()" id="pdf-button">Télécharger La Liste</button>
-</div>
+      <!-- ON CLICK GENERATE PDF-->
+      <button onclick="generatePdf()" id="pdf-button">Télécharger La Liste</button>
+    </div>
     <!-- product table -->
     <table class="tableliste">
       <thead>
@@ -280,36 +89,39 @@ h1.title {
       </tbody>
     </table>
 
-    
+
   </div>
-<p id="current-date">La date d'aujoud'hui :</p>
+  <p id="current-date">La date d'aujoud'hui :</p>
 
-<script src="products.js"></script>
+ <!--  <script src="products.js"></script> -->
+  <script src="newproducts.js"></script>
+  <script src="generate-pdf.js"></script>
+  <script src="search.js"></script>
 
-<script>
-// get the client name from the user 
+  <script>
+    // get the client name from the user 
 
-let clientName = localStorage.getItem('clientName');
+    let clientName = localStorage.getItem('clientName');
 
-if (!clientName) {
-  clientName = prompt('Please enter your name or the name of your company:');
-  localStorage.setItem('clientName', clientName);
-}
+    if (!clientName) {
+      clientName = prompt('Please enter your name or the name of your company:');
+      localStorage.setItem('clientName', clientName);
+    }
 
-// Display the client name in a stylish div
-const nameDiv = document.createElement('div');
-nameDiv.innerHTML = `Client Name: ${clientName}`;
-nameDiv.classList.add('client-name');
-document.body.appendChild(nameDiv);
+    // Display the client name in a stylish div
+    const nameDiv = document.createElement('div');
+    nameDiv.innerHTML = `Client Name: ${clientName}`;
+    nameDiv.classList.add('client-name');
+    document.body.appendChild(nameDiv);
 
 
-function generateTableRows(products) {
-  const table = document.getElementById('product-table');
-  table.innerHTML = ''; // clear the table
-  products.forEach(product => {
-    const row = document.createElement('tr');
-	 row.className = "active-row";
-    row.innerHTML = `
+    function generateTableRows(products) {
+      const table = document.getElementById('product-table');
+      table.innerHTML = ''; // clear the table
+      products.forEach(product => {
+        const row = document.createElement('tr');
+        row.className = "active-row";
+        row.innerHTML = `
       <td>
         <input id="checkbox" class="custom-checkbox"  type="checkbox" ${product.checked ? 'checked' : ''}>
       </td>
@@ -330,181 +142,83 @@ function generateTableRows(products) {
         </select>
       </td>
     `;
-    const checkbox = row.querySelector('input[type="checkbox"]');
-    checkbox.addEventListener('click', () => {
-      product.checked = checkbox.checked;
-    });
+        const checkbox = row.querySelector('input[type="checkbox"]');
+        checkbox.addEventListener('click', () => {
+          product.checked = checkbox.checked;
+        });
 
-    const quantityInput = row.querySelector('input[type="number"]');
-    quantityInput.addEventListener('change', () => {
-      product.quantity = parseInt(quantityInput.value);
-    });
-    const unitSelect = row.querySelector('select');
-    unitSelect.addEventListener('change', () => {
-      product.unit = unitSelect.value;
-    });
-    table.appendChild(row);
-    
-  });
-}
+        const quantityInput = row.querySelector('input[type="number"]');
+        quantityInput.addEventListener('change', () => {
+          product.quantity = parseInt(quantityInput.value);
+        });
+        const unitSelect = row.querySelector('select');
+        unitSelect.addEventListener('change', () => {
+          product.unit = unitSelect.value;
+        });
+        table.appendChild(row);
 
-const searchField = document.getElementById('search-field');
-const categorySelect = document.getElementById('category-select');
-
-searchField.addEventListener('input', () => {
-  const query = searchField.value.toLowerCase();
-  const filteredProducts = products.filter(product => {
-    return product.name.toLowerCase().includes(query) || product.category.toLowerCase().includes(query);
-  });
-  generateTableRows(filteredProducts);
-});
-
-categorySelect.addEventListener('change', () => {
-  const category = categorySelect.value;
-  const filteredProducts = category ? products.filter(product => product.category === category) : products;
-  generateTableRows(filteredProducts);
-});
-
-
-window.onload = () => {
-  generateTableRows(products);
-};
-
-
-// HNAYA ZDNA TEMPLATE
-// HNAYA ZDNA TEMPLATE
-// HNAYA ZDNA TEMPLATE
-// HNAYA ZDNA TEMPLATE
-// HNAYA ZDNA TEMPLATE
-
-
-
-
-function generatePdf() {
-  let p = [];
-  let i = 1;
-  products.forEach(product => {
-    if (product.checked == true) {
-      // Only include Product Name, Quantity, and Unit
-      p.push([i++, product.name, product.quantity, product.unit]);
+      });
     }
-  });
 
-  props.invoice.table = p;
 
-  var pdfObject = jsPDFInvoiceTemplate.default(props);
-  console.log('Object created:', pdfObject);
-}
+    const categorySelect = document.getElementById('category-select');
 
-var props = {
-  outputType: jsPDFInvoiceTemplate.OutputType.Save,
-  returnJsPDFDocObject: true,
-  fileName: "solidernet_2024",
-  orientationLandscape: false,
-  compress: true,
-  business: {
-    name: "Solidernet",
-    address: "Temara , Maroc",
-    phone: "(+212) 0667-041734",
-    email: "solidernet@hotmail.com",
-    website: "https://solidernet.ma",
-  },
-  contact: {
-    label: "Inventaire par :",
-    name: localStorage.getItem('clientName'),
-  },
-  invoice: {
-    label: "Inventaire #: ",
-    num: 1,
-    invDate: "-", // Add date dynamically if needed
-    invGenDate: "-", // Add generation date dynamically if needed
-    headerBorder: false,
-    tableBodyBorder: false,
-    header: [
-      { 
-        title: "#", 
-        style: { width: 10 } 
-      },
-      { 
-        title: "Nom du Produit", 
-        style: { 
-          width: 90, 
-          fontSize: 12, 
-          fontStyle: 'bold' // Make the product name bold 
-        } 
-      },
-      { 
-        title: "Quantité", 
-        style: { 
-          width: 30, 
-          fontSize: 12, 
-          fontStyle: 'normal' 
-        } 
-      },
-      { 
-        title: "Unité", 
-        style: { 
-          width: 10, 
-          fontSize: 12, 
-          fontStyle: 'normal' 
-        } 
-      }
-    ],
-    table: [], // This will be dynamically populated
-  },
-};
+    const searchField = document.getElementById('search-field');
+    searchField.addEventListener('input', handleInputChange);
 
-// Update the `generatePdf` function
-function generatePdf() {
-  let tableData = [];
-  let rowIndex = 1;
-  
-  products.forEach(product => {
-    if (product.checked) {
-      tableData.push([
-        rowIndex++, 
-        product.name, 
-        product.quantity, 
-        product.unit
-      ]);
-    }
-  });
+    /* searchField.addEventListener('input', () => {
+      const query = searchField.value.toLowerCase();
+      const filteredProducts = products.filter(product => {
+        return product.name.toLowerCase().includes(query) || product.category.toLowerCase().includes(query);
+      });
+      generateTableRows(filteredProducts);
+    });
+     */
+    categorySelect.addEventListener('change', () => {
+      const category = categorySelect.value;
+      const filteredProducts = category ? products.filter(product => product.category === category) : products;
+      generateTableRows(filteredProducts);
+    });
 
-  props.invoice.table = tableData;
 
-  const pdfObject = jsPDFInvoiceTemplate.default(props);
-  console.log("PDF generated:", pdfObject);
-}
+    window.onload = () => {
+      generateTableRows(products);
+    };
+
+
+    // HNAYA ZDNA TEMPLATE
+    // HNAYA ZDNA TEMPLATE
 
 
 
 
-//end template
+    //end template
   </script>
-  </body>
-  </html>
+</body>
+
+</html>
 
 <style>
-/* Make the checkbox larger */
-.custom-checkbox {
-  width: 30px;
-  height: 30px;
-}
+  /* Make the checkbox larger */
+  .custom-checkbox {
+    width: 30px;
+    height: 30px;
+  }
 
-/* Make the background color visible */
-.custom-checkbox:before {
-  background-color: #ffffff;
-}
+  /* Make the background color visible */
+  .custom-checkbox:before {
+    background-color: #ffffff;
+  }
 
-/* Change the color on hover */
-.custom-checkbox:hover:before {
-  background-color: #f1f1f1;
-}
+  /* Change the color on hover */
+  .custom-checkbox:hover:before {
+    background-color: #f1f1f1;
+  }
 
-/* Add a border when checked */
-.custom-checkbox:checked:before {
-  border: 2px solid #000000;
-}
+  /* Add a border when checked */
+  .custom-checkbox:checked:before {
+    border: 2px solid #000000;
+  }
 </style>
 
 
@@ -512,8 +226,8 @@ function generatePdf() {
 <script>
   var today = new Date();
   var dd = today.getDate();
-  var mm = today.getMonth()+1;
+  var mm = today.getMonth() + 1;
   var yyyy = today.getFullYear();
 
-  document.getElementById("current-date").innerHTML += dd+'/'+mm+'/'+yyyy;
+  document.getElementById("current-date").innerHTML += dd + '/' + mm + '/' + yyyy;
 </script>

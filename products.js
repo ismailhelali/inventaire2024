@@ -29323,3 +29323,8 @@ const products = [
       unit: '',
     },
 ];
+ const indexedProducts = products.map(product => ({
+  ...product,
+  searchKey: `${product.name.toLowerCase()}`
+}));
+console.log(indexedProducts); 
