@@ -37,12 +37,15 @@
 
   <div class="container-fluid">
     <!-- search field -->
-    <div class="selectdiv">
-      <input type="search" id="search-field" placeholder="Rechercher un produit">
-
-
-      <label>
-        <select class="form-control" id="category-select">
+    <div class="search-container">
+      <input 
+        type="search" 
+        id="search-field" 
+        placeholder="Rechercher un produit" 
+        class="search-input"
+      />
+      <label class="select-wrapper">
+        <select class="form-control category-select" id="category-select">
           <option value="">Nos catégories</option>
           <option value="EPICES -  FECULENTS ET FRUITS">EPICES - FECULENTS ET FRUITS</option>
           <option value="HYGIENE ET NETTOYAGE">HYGIENE ET NETTOYAGE</option>
@@ -62,12 +65,10 @@
           <option value="LES CHOCOLATS">LES CHOCOLATS</option>
           <option value="LES PATES ALIMENTAIRE">LES PATES ALIMENTAIRE</option>
           <option value="HUILE DE TABLE ET D'OLIVE">HUILE DE TABLE ET D'OLIVE</option>
-
-          <!-- add options for categories here -->
         </select>
       </label>
-
     </div>
+    
     <!-- PDF button -->
     <div class="fixed">
 
