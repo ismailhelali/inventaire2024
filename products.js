@@ -6,6 +6,14 @@ const products = [
       quantity: 1,
       unit: '',
     },
+   {
+      name: 'Serviettes 2plis Luy 20x20cm x 100unt',
+      category: 'EEMBALLAGE ALIMENTAIRE',
+      checked: false,
+      quantity: 1,
+      unit: '',
+    },
+    
     {
       name: '5 Baies moulin Harmony 35g',
       category: 'EPICES -  FECULENTS ET FRUITS',
