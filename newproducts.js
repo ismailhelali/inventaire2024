@@ -7,7 +7,16 @@ const products = [
         "unit": "",
         "searchKey": "5 baies harmony  35g"
     },
+ 
 
+   {
+        "name": "Pruneau 1er choix  AL AMIR  / kg",
+        "category": "EPICES -  FECULENTS ET FRUITS",
+        "checked": false,
+        "quantity": 1,
+        "unit": "",
+        "searchKey": "pruneau 1er choix  al amir  / kg"
+    },
  {
         "name": "Serviettes 2plis Luy 20x20cm x 100unt",
         "category": "EMBALLAGE ALIMENTAIRE",
